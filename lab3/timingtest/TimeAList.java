@@ -32,7 +32,7 @@ public class TimeAList {
         N.addLast(32000);
         N.addLast(64000);
         N.addLast(128000);
-        N.addLast(100000000);
+        //N.addLast(100000000);
         AList<Double> time = new AList<>();
         AList<Integer> opCount = new AList<>();
 
