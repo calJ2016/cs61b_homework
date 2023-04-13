@@ -22,7 +22,7 @@ public class MaxArrayDeque<T> extends ArrayDeque<T> {
             T maxItem = this.get(0);
             for (int i = 1; i < dequeSize; i += 1) {
                 T temp = get(i);
-                if (comparator.compare(maxItem, temp) < 0) {
+                if (c.compare(maxItem, temp) < 0) {
                     maxItem = temp;
                 }
             }
