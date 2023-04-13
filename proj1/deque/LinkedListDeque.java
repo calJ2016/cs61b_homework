@@ -25,7 +25,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     }
 
     public boolean equals(Object o) {
-        if (o == this) {
+        if (this.equals(o)) {
             return true;
         }
         if (o == null) {
@@ -60,7 +60,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
         }
 
         public boolean hasNext() {
-            return current == senitel;
+            return current != senitel;
         }
 
         public T next() {

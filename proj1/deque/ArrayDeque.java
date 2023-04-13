@@ -50,7 +50,7 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
 
 
     public boolean equals(Object o) {
-        if (this == o) {
+        if (this.equals(o)) {
             return true;
         }
         if (o == null) {

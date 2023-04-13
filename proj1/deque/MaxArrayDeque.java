@@ -31,27 +31,27 @@ public class MaxArrayDeque<T> extends ArrayDeque<T> {
         return null;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null) {
-            return false;
-        }
-        if (!(o instanceof MaxArrayDeque)) {
-            return false;
-        }
-        MaxArrayDeque<T> temp = (MaxArrayDeque<T>) o;
-        if (this.size() != temp.size()) {
-            return false;
-        }
-        for (int i = 0; i < this.size(); i++) {
-            if (this.get(i) == temp.get(i)) {
-
-                return false;
-            }
-        }
-        return true;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) {
+//            return true;
+//        }
+//        if (o == null) {
+//            return false;
+//        }
+//        if (!(o instanceof MaxArrayDeque)) {
+//            return false;
+//        }
+//        MaxArrayDeque<T> temp = (MaxArrayDeque<T>) o;
+//        if (this.size() != temp.size()) {
+//            return false;
+//        }
+//        for (int i = 0; i < this.size(); i++) {
+//            if (this.get(i) == temp.get(i)) {
+//
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 }
