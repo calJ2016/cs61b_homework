@@ -25,7 +25,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     }
 
     public boolean equals(Object o) {
-        if (this.equals(o)) {
+        if (this == o) {
             return true;
         }
         if (o == null) {
@@ -40,7 +40,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
         }
 
         for (int i = 0; i < size(); i += 1) {
-            if (!this.get(i).equals(temp.get(i))) {
+            if (this.get(i) != temp.get(i)) {
                 return false;
             }
         }
