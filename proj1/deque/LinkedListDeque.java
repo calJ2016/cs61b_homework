@@ -40,9 +40,11 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
         }
 
         for (int i = 0; i < size(); i += 1) {
-            if (this.get(i) != temp.get(i)) {
+            Object obj = temp.get(i);
+            if (!(this.get(i).equals(obj))){
                 return false;
             }
+
         }
         return true;
     }
@@ -53,9 +55,9 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     }
 
     private class LinkedListDequeIterator implements Iterator<T> {
-        private DoubleNode current ;
+        private DoubleNode current;
 
-        public LinkedListDequeIterator(){
+        public LinkedListDequeIterator() {
             current = senitel.next;
         }
 
@@ -167,7 +169,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     public T get(int index) {
         if (size() > 0 && index >= 0 && index < size) {
             DoubleNode temp = senitel.next;
-            for (int i = 0; i < size(); i ++) {
+            for (int i = 0; i < size(); i++) {
                 if (index == i) {
                     return temp.item;
                 }
