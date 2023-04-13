@@ -57,7 +57,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     private class LinkedListDequeIterator implements Iterator<T> {
         private DoubleNode current;
 
-        public LinkedListDequeIterator() {
+        LinkedListDequeIterator() {
             current = senitel.next;
         }
 
