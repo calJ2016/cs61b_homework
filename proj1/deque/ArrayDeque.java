@@ -25,7 +25,11 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     }
 
     private class ArrayDequeIterator implements Iterator<T> {
-        private int count = 0;
+        private int count;
+
+        public ArrayDequeIterator() {
+            count = 0;
+        }
 
         @Override
         public boolean hasNext() {
@@ -51,7 +55,7 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
         if (!(o instanceof Deque)) {
             return false;
         }
-        Deque<T> temp = (Deque<T>) o;
+        ArrayDeque<T> temp = (ArrayDeque<T>) o;
         if (this.size() != temp.size()) {
             return false;
         }

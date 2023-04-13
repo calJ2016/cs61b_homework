@@ -22,12 +22,35 @@ public class MaxArrayDeque<T> extends ArrayDeque<T> {
             T maxItem = get(0);
             for (int i = 0; i< dequeSize; i += 1){
                 T temp = get(i);
-                if (comparator.compare(maxItem, temp) == 0){
+                if (comparator.compare(maxItem, temp) < 0){
                     maxItem = temp;
                 }
             }
             return maxItem;
         }
         return null;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null) {
+            return false;
+        }
+        if (!(o instanceof MaxArrayDeque)) {
+            return false;
+        }
+        MaxArrayDeque<T> temp = (MaxArrayDeque<T>) o;
+        if (this.size() != temp.size()) {
+            return false;
+        }
+        for (int i = 0; i < this.size(); i++) {
+            if (this.get(i) != temp.get(i)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

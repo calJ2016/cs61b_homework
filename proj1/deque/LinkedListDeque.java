@@ -34,7 +34,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
         if (!(o instanceof Deque)) {
             return false;
         }
-        Deque<T> temp = (Deque<T>) o;
+        LinkedListDeque<T> temp = (LinkedListDeque<T>) o;
         if (size() != temp.size()) {
             return false;
         }
@@ -53,10 +53,14 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     }
 
     private class LinkedListDequeIterator implements Iterator<T> {
-        private DoubleNode current = senitel.next;
+        private DoubleNode current ;
+
+        public LinkedListDequeIterator(){
+            current = senitel.next;
+        }
 
         public boolean hasNext() {
-            return current != null;
+            return current == senitel;
         }
 
         public T next() {
@@ -161,17 +165,16 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     /* get index node's item */
     @Override
     public T get(int index) {
-        T item = null;
-        if (index >= 0 && index < size) {
-            for (T t : this) {
-                if (index == 0) {
-                    item = t;
-                    break;
+        if (size() > 0 && index >= 0 && index < size) {
+            DoubleNode temp = senitel.next;
+            for (int i = 0; i < size(); i ++) {
+                if (index == i) {
+                    return temp.item;
                 }
-                index = index - 1;
+                temp = temp.next;
             }
         }
-        return item;
+        return null;
     }
 
     public T getRecursive(int index) {
