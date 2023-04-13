@@ -25,23 +25,27 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     }
 
     private class ArrayDequeIterator implements Iterator<T> {
-        private int count;
+        private int pointer;
 
         public ArrayDequeIterator() {
-            count = 0;
+            pointer = addOne(nextFirst);
         }
 
         @Override
         public boolean hasNext() {
-            return count < size();
+            return pointer != nextLast;
         }
 
         @Override
         public T next() {
-            T item = get(count);
-            count += 1;
+            T item = items[pointer];
+            pointer = addOne(pointer);
             return item;
         }
+    }
+
+    private int  addOne(int index){
+        return (index + 1) % items.length;
     }
 
 
@@ -55,12 +59,12 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
         if (!(o instanceof Deque)) {
             return false;
         }
-        ArrayDeque<T> temp = (ArrayDeque<T>) o;
+        Deque<T> temp = (Deque<T>) o;
         if (this.size() != temp.size()) {
             return false;
         }
         for (int i = 0; i < this.size(); i++) {
-            if (this.get(i) != temp.get(i)) {
+            if (this.get(i).equals(get(i))) {
                 return false;
             }
         }
