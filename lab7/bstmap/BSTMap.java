@@ -38,7 +38,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         clearValues(root);
     }
 
-    public void clearValues(BSTNode bn) {
+    private void clearValues(BSTNode bn) {
         if (bn == null) {
             return;
         } else {
@@ -62,7 +62,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         return false;
     }
 
-    public boolean containsValue(K key) {
+    private boolean containsValue(K key) {
         if (key == null) {
             throw new IllegalArgumentException("argument to containsKey(K key) is null");
         }
@@ -74,7 +74,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         return get(root, key);
     }
 
-    public V get(BSTNode bn, K key) {
+    private V get(BSTNode bn, K key) {
         if (key == null) {
             throw new IllegalArgumentException("call get(BSTNode, K) is null");
         }
@@ -96,7 +96,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         return size(root);
     }
 
-    public int size(BSTNode bn) {
+    private int size(BSTNode bn) {
         if (bn == null) {
             return 0;
         }
@@ -115,7 +115,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
     }
 
-    public BSTNode put(BSTNode bn, K key, V value) {
+    private BSTNode put(BSTNode bn, K key, V value) {
         //First time to put
         if (bn == null) {
             //put the key into keySet
@@ -140,7 +140,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         throw new UnsupportedOperationException();
     }
 
-    public Set<K> getKeySet() {
+    private Set<K> getKeySet() {
         return keySet;
     }
 
@@ -154,7 +154,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         return value;
     }
 
-    public V remove(BSTNode bn, K key) {
+    private V remove(BSTNode bn, K key) {
         if (bn == null) {
             return null;
         }
@@ -181,7 +181,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         throw new UnsupportedOperationException();
     }
 
-    public void printInOrder() {
+    private void printInOrder() {
         K minKey = minKey();
         K maxKey = maxKey();
         Iterable<K> queueKey = allKeys(minKey, maxKey);
@@ -191,7 +191,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         }
     }
 
-    public K minKey() {
+    private K minKey() {
         BSTNode bn = root;
         while (bn.left != null) {
             bn = bn.left;
@@ -199,7 +199,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         return bn.key;
     }
 
-    public K maxKey() {
+    private K maxKey() {
         BSTNode bn = root;
         while (bn.right != null) {
             bn = bn.right;
@@ -207,7 +207,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         return bn.key;
     }
 
-    public Iterable<K> allKeys(K low, K high) {
+    private Iterable<K> allKeys(K low, K high) {
         if (low == null) throw new IllegalArgumentException("First argument is null.");
         if (high == null) throw new IllegalArgumentException("Second argument is null.");
         Queue<K> queue = new Queue<>();
@@ -215,7 +215,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         return queue;
     }
 
-    public void keys(BSTNode bn, Queue<K> q, K low, K high) {
+    private void keys(BSTNode bn, Queue<K> q, K low, K high) {
         if (bn == null) {
             return;
         }
