@@ -181,7 +181,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         throw new UnsupportedOperationException();
     }
 
-    private void printInOrder() {
+    public void printInOrder() {
         K minKey = minKey();
         K maxKey = maxKey();
         Iterable<K> queueKey = allKeys(minKey, maxKey);
