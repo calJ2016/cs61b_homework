@@ -1,0 +1,43 @@
+This program inserts lexicographically increasing Strings into Maps as <String, Integer> pairs.
+
+Enter # strings to insert into hashmap.ULLMap: "hello"
+Please enter a positive integer: 1
+class hashmap.ULLMap: 0.01 sec
+
+Enter # strings to insert into hashmap.MyHashMap: "hello"
+Please enter a positive integer: 1
+class hashmap.MyHashMap: 0.00 sec
+
+Enter # strings to insert into Java's HashMap: "hello"
+Please enter a positive integer: 1
+Java's Built-in HashMap: 0.00 sec
+
+This program inserts random Strings of length L
+ Into different types of maps as <String, Integer> pairs.
+
+What would you like L to be?: 5
+
+Enter # strings to insert into hashmap.ULLMap: "canyoutestit"
+Please enter a positive integer: 22
+class hashmap.ULLMap: 0.00 sec
+
+Enter # strings to insert into your hashmap.MyHashMap: "canyoutestit"
+Please enter a positive integer: 22
+class hashmap.MyHashMap: 0.00 sec
+
+Enter # strings to insert into Java's HashMap: "canyoutestit"
+Please enter a positive integer: 22
+Java's Built-in HashMap: 0.00 sec
+
+This program inserts random Strings of length L
+ Into different types of maps as <String, Integer> pairs.
+
+What would you like L to be?: 10
+
+Enter # strings to insert into each map: "calisacewanttogo"
+Please enter a positive integer: 11
+class hashmap.MyHashMapALBuckets: 0.00 sec
+class hashmap.MyHashMapLLBuckets: 0.00 sec
+class hashmap.MyHashMapTSBuckets: 0.00 sec
+class hashmap.MyHashMapHSBuckets: 0.00 sec
+class hashmap.MyHashMapPQBuckets: 0.00 sec

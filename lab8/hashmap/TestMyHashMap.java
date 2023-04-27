@@ -24,6 +24,7 @@ public class TestMyHashMap {
     //assumes put/size/containsKey/get work
     @Test
     public void sanityClearTest() {
+
         sanityClearTest(new MyHashMap<>());
     }
 
